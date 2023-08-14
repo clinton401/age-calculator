@@ -1,0 +1,102 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"); */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:ital,wght@1,800&family=Roboto:ital@1&display=swap');
+* {
+  margin: 0;
+  /* border: 1px solid black; */
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: hsl(0, 0%, 86%);
+  /* font-family: 'Poppins', sans-serif; */
+  /* border: 8px solid black; */
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main {
+  width: 700px;
+  overflow-x: hidden;
+
+  /* margin: 0 auto; */
+  /* height: 70%; */
+  padding: 40px;
+  background-color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 15px 15px 25% 15px;
+}
+.inputs {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid hsl(0, 0%, 86%);
+  padding-bottom: 40px;
+  /* justify-content: space-between; */
+  & div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+input {
+  padding: 20px;
+  margin-top: 10px;
+  margin-right: 40px;
+  border-radius: 7px;
+font-family: 'Inter', sans-serif;  /* font-family: 'Poppins', sans-serif; */
+  font-size: 20px;
+  color: black;
+  font-weight: 900;
+  outline: none;
+  border: 1px solid hsl(0, 0%, 86%);
+  width: 120px;
+}
+
+label {
+  /* font-family: 'Roboto', sans-serif; */
+
+  font-weight: 900;
+  font-size: 17px;
+  color: hsl(0, 0%, 44%);
+  /* margin-bottom: 50px; */
+}
+#lday.active, #lyear.active, #lmonth.active {
+   color: #FF7377;
+}
+.down {
+  position: absolute;
+  /* bottom: -25px; */
+  top: 80%;
+  right: 0;
+  border-radius: 50%;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  padding: 20px;
+  background-color: hsl(259, 100%, 65%);
+}
+.down:hover {
+    background-color: hsl(0, 0%, 8%);
+    transition: .5s;
+}
+.content {
+    padding-top: 40px;
+    & h1 {
+        display: flex;
+        font-size: 65px;
+        font-family: 'Poppins', sans-serif;
+        & nav {
+            color: hsl(259, 100%, 65%);
+            padding-right: 5px;
+        }
+    }
+}
+.err {
+    padding-top: 10px;
+    font-weight: 900;
+    font-size: 13px;
+    color: hsl(0, 100%, 67%);
+    font-family: 'Roboto', sans-serif;
+}

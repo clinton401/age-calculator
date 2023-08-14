@@ -1,0 +1,63 @@
+@media screen and (max-width: 730px) {
+   #main {
+    padding: 40px 20px ;
+        width: 85%;
+        margin: 0 auto;
+        & .inputs {
+            display: flex;
+            justify-content: space-between;
+            & div {
+                width: 30%;
+                & input {
+                    width: 100%;
+                }
+            }
+        }
+        
+    }
+    .down {
+        position: absolute;
+        margin: 0 auto;
+        right: auto;
+        left: 44%;
+        /* right: auto;
+         left: 50%;
+  transform: translate(-50%, auto); */
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+
+    }
+    .content {
+        & h1 {
+            font-size: 45px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+   input {
+    padding: 20px 10px;
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .down {
+        top: 85%;
+        left: 45%;
+        padding: 12px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .down {
+        /* top: 85%; */
+        left: 43%;
+        /* padding: 12px; */
+    }
+}
+@media screen and (max-width: 250px) {
+    .down {
+        /* top: 85%; */
+        left: 38%;
+        /* padding: 12px; */
+    }
+}
