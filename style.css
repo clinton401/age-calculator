@@ -95,7 +95,7 @@ label {
 }
 .err {
     padding-top: 10px;
-    font-weight: 900;
+    font-weight: 50;
     font-size: 13px;
     color: hsl(0, 100%, 67%);
     font-family: 'Roboto', sans-serif;

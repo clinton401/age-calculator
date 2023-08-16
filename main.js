@@ -177,31 +177,69 @@ const subHandler = () => {
     console.log(res2);
     if (a && b && c) {
         if (months > monthh) {
-            navTwo.innerText = mm - 1;
-            navOne.innerText = res - 1
+            
+            navOne.innerText = res - 1;
+            if (days < dayy) {
+                navThree.innerText = dayy - days;
+                navTwo.innerText = mm;
+            } else if (days === dayy) {
+                navThree.innerText = 0;
+                navTwo.innerText = mm;
+            }
+            else {
+                const fin = d - days;
+                navTwo.innerText = mm - 1;
+
+                navThree.innerText = fin + dayy
+            }
+            
        
         } else if (months < monthh) {
            
-            navTwo.innerText = monthh - months ;
+            
             navOne.innerText = res;
+            if (days < dayy) {
+                navThree.innerText = dayy - days;
+                navTwo.innerText = monthh - months ;
+            } else if (days === dayy) {
+                navThree.innerText = 0;
+                navTwo.innerText = monthh - months ;
+            }
+            else {
+                const fin = d - days;
+                navTwo.innerText = monthh - months - 1;
+                navThree.innerText = fin + dayy
+            }
+
+
            
         } else {
-            navTwo.innerText = monthh - months;
+            navTwo.innerText = months - monthh;
             navOne.innerText = res;
+            if (days < dayy) {
+                navThree.innerText = dayy - days;
+            } else if (days === dayy) {
+                navThree.innerText = 0
+            }
+            else {
+                const fin = d - days;
+
+                navThree.innerText = fin + dayy
+            }
         }
     }
-    if (a && b && c) {
-        if (days < dayy) {
-            navThree.innerText = dayy - days;
-        } else if (days === dayy) {
-            navThree.innerText = 0
-        }
-        else {
-            const fin = d - days;
+    // if (a && b && c) {
+    //     if (days < dayy) {
+    //         navThree.innerText = dayy - days;
+    //     } else if (days === dayy) {
+    //         navThree.innerText = 0
+    //     }
+    //     else {
+    //         const fin = d - days;
         
-            navThree.innerText = fin + dayy
-        }
-    }
+    //         navThree.innerText = fin + dayy + 1
+    //     }
+    // }
 }
 
 sub.addEventListener('click', subHandler)
