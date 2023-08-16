@@ -20,12 +20,7 @@
         margin: 0 auto;
         right: auto;
         left: 44%;
-        /* right: auto;
-         left: 50%;
-  transform: translate(-50%, auto); */
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
+   
 
     }
     .content {
@@ -43,8 +38,11 @@
 @media screen and (max-width: 400px) {
     .down {
         top: 85%;
-        left: 45%;
+        left: 43%;
         padding: 12px;
+    }
+    label {
+        font-size: 13px;
     }
 }
 @media screen and (max-width: 320px) {

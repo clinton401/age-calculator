@@ -18,26 +18,44 @@ let monthh = date.getMonth() + 1;
 console.log(monthh);
 year.max = yearr;
 const daysChange = () => {
-    const months = document.getElementById('month').value;
-
-    const days = document.getElementById('day').value;
-   
+    const months = parseInt(document.getElementById('month').value);
+    const days = parseInt(document.getElementById('day').value);
     const one = document.getElementById('one');
-    let d = 31;
-    // if (months === 4 || months === 6 || months === 9 || months === 11) {
-    //     d = 30
-    //     if (days > d) {
-    //         alert('go')
-    //     }
-    // } 
-    if (days > d || days <= 0) {
-        one.innerText = 'must be a valid date';
-        lday.classList.toggle('active')
 
-    } else {
-        one.innerText = '';
-        lday.classList.remove('active')
-   }
+    let d = 31;
+
+    if (months === 4 || months === 6 || months === 9 || months === 11) {
+        d = 30;
+    } else if (months === 2) {
+        d = 28;
+    }
+    // let go = false;
+    // switch (months) {
+    //     case 4:
+    //     case 6:
+    //     case 9:
+    //     case 11:
+    //         if (days > 30) {
+    //             alert('go');
+               
+    //         }
+    //         break;
+    //     default:
+    //         if (days > d) {
+    //             alert('back');
+    //         }
+    //         break;
+    // }
+ 
+        if (days > d || days <= 0) {
+            one.innerText = 'must be a valid date';
+            lday.classList.toggle('active')
+
+        } else {
+            one.innerText = '';
+            lday.classList.remove('active')
+        }
+    
 }
 day.addEventListener('change', daysChange)
 // day.addEventListener('blur', daysChange )
@@ -73,8 +91,8 @@ const yearChange = () => {
 year.addEventListener('change', yearChange)
 
 const subHandler = () => {
-    const days = document.getElementById('day').value;
-    const months = document.getElementById('month').value;
+    const months = parseInt(document.getElementById('month').value);
+    const days = parseInt(document.getElementById('day').value);
     const years = document.getElementById('year').value;
     const one = document.getElementById('one');
     const two = document.getElementById('two');
@@ -86,24 +104,52 @@ const subHandler = () => {
     let a = false;
     let b = false;
     let c = false;
-    // if (months === 4 || months === 6 || months === 9 || months === 11) {
-    //     d = 30
-    //     if (days > d) {
-    //         alert('go')
-    //     }
-    // } 
-    if (days > d || days <= 0) {
-        one.innerText = 'must be a valid date';
-        lday.classList.toggle('active');
-         a = false;
-        
+    const ddd = days;
 
+    if (months === 4 || months === 6 || months === 9 || months === 11) {
+        d = 30;
+        if (days > d || days <= 0) {
+            one.innerText = 'must be a valid date';
+            lday.classList.toggle('active');
+            a = false;
+
+
+        } else {
+            one.innerText = '';
+            lday.classList.remove('active')
+            a = true;
+
+        }
+    } else if (months === 2) {
+        d = 28;
+        if (days > d || days <= 0) {
+            one.innerText = 'must be a valid date';
+            lday.classList.toggle('active');
+            a = false;
+
+
+        } else {
+            one.innerText = '';
+            lday.classList.remove('active')
+            a = true;
+
+        }
     } else {
-        one.innerText = '';
-        lday.classList.remove('active')
-        a = true;
-        
+        d = 31;
+        if (days > d || days <= 0) {
+            one.innerText = 'must be a valid date';
+            lday.classList.toggle('active');
+            a = false;
+
+
+        } else {
+            one.innerText = '';
+            lday.classList.remove('active')
+            a = true;
+
+        }
     }
+  
     if (months > 12 || months <= 0) {
         two.innerText = 'must be a valid month';
         lmonth.classList.toggle('active');
@@ -124,24 +170,6 @@ const subHandler = () => {
         lyear.classList.remove('active')
     }
    
-    //     if (days > 31 || days <= 0 || months > 12 || months <= 0 || years > yearr || years <= 0) {
-    //         one.innerText = 'must be a valid date';
-    //         two.innerText = 'must be a valid month';
-    //         three.innerText = 'must be a valid year';
-    //         lday.classList.toggle('active')
-    //         lmonth.classList.toggle('active')
-    //         lyear.classList.toggle('active')
-    //     } else {
-    //         one.innerText = '';
-    //         two.innerText = '';
-    //         three.innerText = '';
-    //         lday.classList.remove('active')
-    //         lmonth.classList.remove('active')
-    //         lyear.classList.remove('active')
-    //         navThree.innerHTML = dayy - days;
-    //         navTwo.innerHTML = monthh - months;
-    //         navOne.innerHTML = yearr - years;
-    //     }
     const dd = 12 - months;
     const mm = monthh + dd;
     const res = yearr - years;
@@ -153,17 +181,10 @@ const subHandler = () => {
             navOne.innerText = res - 1
        
         } else if (months < monthh) {
-            // alert('i am boy')
-            navTwo.innerText = monthh - months;
+           
+            navTwo.innerText = monthh - months ;
             navOne.innerText = res;
-            // if (res2 === 1) {
-            //     navTwo.innerText = monthh - months ;
-            //     // alert('boy')
-            //     navOne.innerText = res
-            // } else {
-            //     navTwo.innerText = monthh - months - 1;
-            //     navOne.innerText = res
-            // }
+           
         } else {
             navTwo.innerText = monthh - months;
             navOne.innerText = res;
@@ -172,8 +193,11 @@ const subHandler = () => {
     if (a && b && c) {
         if (days < dayy) {
             navThree.innerText = dayy - days;
-        } else {
-            const fin = 31 - days;
+        } else if (days === dayy) {
+            navThree.innerText = 0
+        }
+        else {
+            const fin = d - days;
         
             navThree.innerText = fin + dayy
         }
