@@ -87,7 +87,7 @@ label {
         display: flex;
         font-size: 65px;
         font-family: 'Poppins', sans-serif;
-        & nav {
+        & strong {
             color: hsl(259, 100%, 65%);
             padding-right: 5px;
         }
