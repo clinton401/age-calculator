@@ -36,11 +36,12 @@ main {
   border-bottom: 1px solid hsl(0, 0%, 86%);
   padding-bottom: 40px;
   /* justify-content: space-between; */
-  & div {
+  
+}
+.inputs div {
     display: flex;
     flex-direction: column;
   }
-}
 input {
   padding: 20px;
   margin-top: 10px;
@@ -83,16 +84,18 @@ label {
 }
 .content {
     padding-top: 40px;
-    & h1 {
+}
+    .content h1 {
         display: flex;
         font-size: 65px;
         font-family: 'Poppins', sans-serif;
-        & strong {
+    }
+        .content strong {
             color: hsl(259, 100%, 65%);
             padding-right: 5px;
         }
-    }
-}
+    
+
 .err {
     padding-top: 10px;
     font-weight: 50;
